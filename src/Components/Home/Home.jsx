@@ -16,7 +16,7 @@ const Footer = lazy(() => import("../footer/Footer"));
 export default function home() {
 
 
-console.log(import.meta.env.VITE_SOME_API_KEY)
+
 
   return (
 <>

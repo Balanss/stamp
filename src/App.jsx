@@ -1,5 +1,5 @@
 
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { HashRouter ,Route, Routes } from "react-router-dom";
 import { lazy, Suspense } from "react";
 import Navbar from "./Components/Navbar";
 import {UserProvider} from './Components/Context/User';
@@ -19,7 +19,7 @@ function App() {
   return (
     <>
     <UserProvider>
-      <BrowserRouter>
+      <HashRouter>
         <Suspense fallback={<div>Loading...</div>}>
         <div className="fixed top-0  z-[1] w-screen">
               {window.innerWidth < 1023 ? (
@@ -29,7 +29,7 @@ function App() {
               )}
             </div>
           <Routes>
-            <Route path="/stamps" element={< Home/>} />
+            <Route path="/" element={< Home/>} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/login" element={<Login />} />
             <Route path="/profile/:userid/:companyName" element={<Profile />} />
@@ -37,7 +37,7 @@ function App() {
             {/* <Route path="*" element={<NotFound />} /> */}
           </Routes>
         </Suspense>
-      </BrowserRouter>
+      </HashRouter>
       </UserProvider>
     </>
   );
